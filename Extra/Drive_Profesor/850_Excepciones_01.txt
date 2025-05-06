@@ -1,0 +1,30 @@
+
+Las excepciones son errores que ocurren durante la ejecución de un programa. 
+Por ejemplo, intentar dividir entre cero o acceder a una posición inexistente 
+de una lista.
+
+Python permite capturar estos errores y actuar en consecuencia sin que el 
+programa termine abruptamente.
+
+🧱 Estructura básica de manejo de excepciones
+
+try:
+    # Código que puede causar un error
+except TipoDeError:
+    # Código que se ejecuta si ocurre ese error
+else:
+    # (Opcional) Código que se ejecuta si NO ocurre ningún error
+finally:
+    # (Opcional) Código que se ejecuta siempre, ocurra o no el error
+    
+
+Excepciones más comunes:
+
+Excepción	        ¿Cuándo ocurre?
+
+ZeroDivisionError	Dividir entre cero
+ValueError	        Conversión de tipos inválida
+IndexError	        Índice fuera del rango de una secuencia
+KeyError	        Clave inexistente en un diccionario
+TypeError	        Operación no válida entre tipos distintos
+FileNotFoundError	Archivo no encontrado

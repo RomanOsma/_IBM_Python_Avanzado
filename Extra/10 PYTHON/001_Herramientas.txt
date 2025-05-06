@@ -1,0 +1,14 @@
+Para codificar online:
+
+ - https://pythonsandbox.com/
+ - https://vscode.dev/?vscode-lang=es-es
+
+IDEs:
+ - https://code.visualstudio.com/
+ - https://www.jetbrains.com/pycharm/
+
+Plug-ins de Visual Studio:
+ - Python
+ - Python debugger
+ - Pylance
+ - Jupiter
