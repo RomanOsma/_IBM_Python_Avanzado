@@ -1,0 +1,4 @@
+Primera línea.
+Segunda línea del archivo.
+Tercera línea, un poco más larga.
+Cuarta línea final.

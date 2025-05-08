@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <!-- Título genérico del sitio. El bloque 'title' podrá sobreescribir
+         (o añadir con super()) la parte entre los tags -->
+    <title>Mi sitio web – {% block title %}{% endblock %}</title>
+
+    <!-- CSS común a todas las páginas -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <!-- {# Bloque vacío para que las páginas hijas inyecten <link> o <style> extra
+       usando {{ super() }} si quieren mantener el CSS principal #} -->
+    {% block head_extra %}{% endblock %}
+</head>
+<body>
+    <!-- Incrustamos un componente reutilizable: la barra de navegación -->
+    {% include "_navbar.html" %}
+
+    <!-- Contenedor principal del contenido. Las vistas hijas lo rellenan. -->
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- JavaScript común a todo el sitio -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    <!-- {# Bloque opcional para scripts específicos. Se suele llamar con super()
+       para no perder el script común anterior. #} -->
+    {% block scripts_extra %}{% endblock %}
+</body>
+</html>

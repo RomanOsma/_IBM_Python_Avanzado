@@ -1,0 +1,37 @@
+Para codificar online:
+
+ - https://pythonsandbox.com/
+ - https://vscode.dev/?vscode-lang=es-es
+
+IDEs:
+ - https://code.visualstudio.com/
+ - https://www.jetbrains.com/pycharm/
+
+Plug-ins de Visual Studio:
+ - Python
+ - Python debugger
+ - Pylance
+ - Jupiter
+
+
+Editados -t
+ 265
+ 281
+ 301
+ 355
+ 356
+ 357
+ 380
+
+Alt + Shift + E Para ejecutar lineas de codigo independiente
+
+Ejemplo de Prompt: para mejora de codigo
+
+    "Hola, por favor, analiza y mejora el siguiente archivo Python (nombre_del_archivo.py) de la misma manera que hiciste con 301_funciones_lambda_t.py. Me gustaría que:
+    Mejores la documentación (docstrings y comentarios) para explicar claramente qué hace el código y los conceptos que utiliza.
+    Añadas más ejemplos prácticos y variados para ilustrar el uso de las características presentadas.
+    Si es relevante, compares el código con formas alternativas de hacer lo mismo (por ejemplo, bucles vs. comprensión de listas).
+    Añadas una sección de ejercicios con soluciones comentadas para practicar.
+    Revises el código para asegurar que sea claro, eficiente y siga las buenas prácticas de Python.
+    Organices el archivo con secciones claras si es necesario.
+    Aquí está el código del archivo nombre_del_archivo.py:

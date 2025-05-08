@@ -1,0 +1,50 @@
+
+<!--
+    Ejemplo de página web con dos hojas de estilo. Por defecto no hay estilo. 
+    Se elegirá una vez se cargue la página mediante botones:
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link id="theme" rel="stylesheet" type="text/css" href="">
+    <title>Mi Página Web</title>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a mi página web</h1>
+        <nav>
+            <ul>
+                <li><a href="#section1">Sección 1</a></li>
+                <li><a href="#section2">Sección 2</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="section1">
+            <h2>Sección 1</h2>
+            <p>Esta es la sección 1 de la página web.</p>
+        </section>
+
+        <section id="section2">
+            <h2>Sección 2</h2>
+            <p>Esta es la sección 2 de la página web.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 Mi Página Web</p>
+    </footer>
+
+    <button onclick="changeTheme('summer.css')">Tema de Verano</button>
+    <button onclick="changeTheme('christmas.css')">Tema de Navidad</button>
+
+    <script>
+        function changeTheme(theme) {
+            document.getElementById('theme').href = theme;
+        }
+    </script>
+</body>
+</html>

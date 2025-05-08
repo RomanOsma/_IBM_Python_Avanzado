@@ -1,0 +1,13 @@
+1
+https://github.com/hektorprofe/webpersonal
+https://github.com/hektorprofe/webempresa
+https://github.com/hektorprofe/webplayground
+
+Oficial
+https://www.djangoproject.com/
+
+4
+https://github.com/tonsky/FiraCode
+Oficial
+https://www.python.org/
+https://code.visualstudio.com/

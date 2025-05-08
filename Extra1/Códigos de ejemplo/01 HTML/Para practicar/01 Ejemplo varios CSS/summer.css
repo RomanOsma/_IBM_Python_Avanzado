@@ -1,0 +1,21 @@
+body {
+    background-color: #FFD700;
+    color: #FF6347;
+}
+
+header {
+    background-color: #FFA500;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+footer {
+    background-color: #FFA500;
+}

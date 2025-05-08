@@ -1,0 +1,4 @@
+4
+https://www.anaconda.com/download#download-section
+https://www.python.org/downloads/
+https://jupyter.org/index.html

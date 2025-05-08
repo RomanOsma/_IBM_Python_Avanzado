@@ -1,0 +1,1 @@
+Ejemplo de cómo una página web puede cambiar sólo cambiando el estilo 
