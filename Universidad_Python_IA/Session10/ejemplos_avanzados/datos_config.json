@@ -1,0 +1,30 @@
+{
+    "aplicacion": "Mi Gestor",
+    "configuracion": {
+        "max_items": null,
+        "notificaciones": true,
+        "tema": "oscuro"
+    },
+    "permisos": [
+        {
+            "acceso": [
+                "lectura",
+                "escritura",
+                "eliminar"
+            ],
+            "rol": "admin"
+        },
+        {
+            "acceso": [
+                "lectura"
+            ],
+            "rol": "invitado"
+        }
+    ],
+    "usuarios_activos": [
+        "admin",
+        "invitado1",
+        "dev"
+    ],
+    "version": 1.2
+}

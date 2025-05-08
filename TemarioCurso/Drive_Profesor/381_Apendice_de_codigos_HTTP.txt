@@ -1,0 +1,30 @@
+✅ Códigos 2xx – Éxito
+Código	Significado
+200	    OK – Todo ha ido bien
+201	    Created – Se ha creado algo nuevo
+202	    Accepted – Aceptado, pero aún no procesado
+204	    No Content – Todo bien, pero sin respuesta (vacía)
+
+⚠️ Códigos 3xx – Redirección
+
+Código	Significado
+301	    Moved Permanently – URL redirigida permanentemente
+302	    Found – Redirección temporal
+304	    Not Modified – El recurso no ha cambiado
+
+❌ Códigos 4xx – Error del cliente
+
+Código	Significado
+400	    Bad Request – Petición mal formada
+401	    Unauthorized – No autorizado (falta token/login)
+403	    Forbidden – Prohibido, no tienes permisos
+404	    Not Found – No se ha encontrado el recurso
+409	    Conflict – Conflicto con el estado actual del servidor
+
+💥 Códigos 5xx – Error del servidor
+
+Código	Significado
+500	    Internal Server Error – Fallo interno
+502	    Bad Gateway – El servidor recibió una respuesta inválida
+503	    Service Unavailable – El servidor no está disponible
+504	    Gateway Timeout – Se agotó el tiempo de espera

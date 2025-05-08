@@ -1,0 +1,72 @@
+1) ¿Qué es un “cursor”?
+Cuando trabajas con bases de datos en Python (o en muchos otros lenguajes), 
+no lanzas las consultas directamente sobre la “conexión” sino que lo haces ​a través 
+de un objeto intermedio llamado cursor. Este objeto:
+
+- Envía la consulta SQL al servidor.
+
+- Navega por los resultados (“avanza” fila a fila).
+
+- Te proporciona métodos para recuperar esos resultados (fetchone(), fetchall(), fetchmany()).
+
+Piensa en el cursor como un “puntero” que se mueve por el conjunto de filas que devuelve tu consulta.
+
+2) ¿Por qué usar dictionary=True?
+Por defecto, cuando creas un cursor sin argumentos:
+
+cursor = cnx.cursor()
+
+cada fila que recuperes vendrá como tupla, por ejemplo:
+
+# Supongamos que tu SELECT es: SELECT id, nombre, precio FROM articulos;
+
+fila = cursor.fetchone()
+# fila podría ser: ( 'AR01', 'iPhone 13', Decimal('799.00') )
+
+El problema de las tuplas es que:
+
+- No sabes de un vistazo a qué columna corresponde cada posición.
+
+- Si cambias tu consulta (p. ej. añades o reordenas columnas), tu código debe 
+adaptarse al nuevo orden de índices fila[0], fila[1], etc.
+
+Con dictionary=True:
+
+cursor = cnx.cursor(dictionary=True)
+
+las filas se devuelven como diccionarios Python:
+
+fila = cursor.fetchone()
+
+# fila podría ser:
+# {
+#    'codigo_articulo': 'AR01',
+#    'nombre_articulo': 'iPhone 13',
+#    'precio': Decimal('799.00')
+# }
+
+Ventajas
+- Legibilidad: Accedes a cada campo por su nombre: fila['precio'] en lugar de fila[2].
+
+- Robustez: Si cambias el orden de columnas en tu SELECT, tu código sigue funcionando 
+            siempre que uses los nombres.
+
+- Mantenimiento: Si alguien más lee tu código, ve claramente fila['empresa'] 
+                o fila['seccion'] y no tiene que adivinar qué posición ocupa cada campo.
+
+3) Consideraciones de rendimiento
+Un cursor en modo diccionario consume un poco más de memoria y CPU que el modo por 
+defecto, porque internamente tiene que construir cada fila como dict.
+
+En la práctica, salvo que estés recuperando millones de filas, la diferencia es 
+insignificante frente a la comodidad y claridad que aporta.
+
+Resumen
+- Sin dictionary=True → filas como tuplas, p. ej. (col1, col2, col3)
+cursor = cnx.cursor()
+
+- Con dictionary=True → filas como dicts, p. ej. {'col1': ..., 'col2': ..., 'col3': ...}
+cursor = cnx.cursor(dictionary=True)
+
+Usar dictionary=True es una práctica habitual cuando quieres escribir código más legible 
+y menos propenso a errores al acceder a los resultados de tus consultas.

@@ -1,0 +1,5 @@
+1,Papas,70
+2,Refresco,50
+3,Sandwich,120
+4,Chocolate,60.0
+5,chicolate plus,200.0

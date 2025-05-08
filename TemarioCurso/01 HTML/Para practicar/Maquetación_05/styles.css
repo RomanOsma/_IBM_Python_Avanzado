@@ -1,0 +1,105 @@
+body{
+    background-color: #252525;
+    color: white;
+}
+
+header{
+    background-color: rgba(0,0,0,0.5);
+}
+
+header a{
+    color: white;
+    text-decoration: none;
+    padding: 0px 20px;
+    font-weight: bold;
+}
+
+header a:hover{
+    color: #8c4c26;
+}
+
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ),
+    url("https://cdn.colombia.com/gastronomia/2012/09/28/milanesas-a-la-napolitana-3673.jpg");
+    background-size: cover;
+    background-position: center center;
+
+    color: white;
+}
+
+#galeria{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+#galeria img:hover{
+    opacity: 0.5;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+@media (max-width:950px) {
+    #galeria{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+#galeria img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#como-pedir{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ),
+    url("background.jpg");
+    background-position-x: center;
+    background-position-y: bottom;
+    background-size: cover;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#como-pedir h2{
+    font-size: 3.5em;
+}
+
+#como-pedir ol{
+    font-size: 1.5em;
+}
+
+@media (max-width:750px) {
+    #como-pedir{
+        flex-direction: column-reverse;
+    }
+}
+
+#como-pedir div{
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+}
+
+/* #como-pedir img{
+    min-width: 300px;
+    max-width: 800px;
+} */
+

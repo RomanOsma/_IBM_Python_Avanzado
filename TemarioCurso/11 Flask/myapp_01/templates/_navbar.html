@@ -1,0 +1,12 @@
+<!-- {# _
+    Este archivo parcial (empieza con “_” por convención) se incluye en
+    cualquier plantilla que necesite la barra de navegación.
+    No necesita bloques ni herencia, solo markup simple.
+ #} -->
+ <nav>
+     <!-- url_for genera las URLs correctas respetando Blueprints, etc. -->
+     <a href="{{ url_for('index') }}">Inicio</a> |
+     <a href="{{ url_for('hello') }}">Hola</a>
+ </nav>
+ <hr>
+ 
