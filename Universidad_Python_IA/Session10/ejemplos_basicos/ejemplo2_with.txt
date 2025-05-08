@@ -1,7 +1,0 @@
-Línea 1: Usando el bloque with.
-Línea 2: ¡El archivo se cierra solo!
-Línea 3: Mucho más seguro y limpio.
-
---- Contenido Anexado ---
-Línea anexada el: 2025-04-20 08:44:03
-El modo "a" es útil para logs o añadir datos sin borrar lo anterior.

@@ -1,3 +1,0 @@
-Línea 1: ¡Hola, mundo!
-Línea 2: Este es un ejemplo usando open() y close().
-Línea 3: Es importante cerrar el archivo manualmente.
