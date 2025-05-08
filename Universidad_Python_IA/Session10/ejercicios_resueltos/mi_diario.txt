@@ -1,4 +1,0 @@
-Hoy aprendí sobre manejo de archivos en Python.
-El bloque 'with' es muy útil.
-Mañana practicaré con archivos CSV.
-Entrada del 2025-04-20: ¡Sigo aprendiendo!
