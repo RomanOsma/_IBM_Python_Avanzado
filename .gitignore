@@ -1,0 +1,33 @@
+# Sistema Operativo
+.DS_Store
+Thumbs.db
+
+# IDEs y editores
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Dependencias
+node_modules/
+venv/
+.env/
+
+# Archivos de caché
+__pycache__/
+*.pyc
+
+# Archivos de compilación
+*.o
+*.a
+*.exe
+
+# Archivos de configuración locales
+.env
+*.log
+*.zip
+*.csv
+*.tar.gz
+*.mp4
+*.avi
+*.mkv

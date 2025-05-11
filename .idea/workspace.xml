@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d81bf514-6adf-4c57-a37f-da9d748a7072" name="Changes" comment="recolocar todo">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Universidad_Python_IA/Session13/Flask.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterClassFlask/Práctica final curso Flask - Django.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TemarioCurso/Curso_Flask.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/TemarioCurso/Curso_Flask.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,13 +45,14 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/roman/Cursos/IBM_Python_Avanzado&quot;
   }
 }</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-348a24fa61fa-5312c7369657-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.23774.444" />
+        <option value="bundled-python-sdk-2ee2454479a3-9cdd278e9d02-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.25410.122" />
       </set>
     </attachedChunks>
   </component>

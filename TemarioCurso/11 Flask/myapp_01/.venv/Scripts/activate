@@ -41,12 +41,12 @@ case "$(uname)" in
     CYGWIN*|MSYS*|MINGW*)
         # transform D:\path\to\venv to /d/path/to/venv on MSYS and MINGW
         # and to /cygdrive/d/path/to/venv on Cygwin
-        VIRTUAL_ENV=$(cygpath 'G:\WORKSPACE\11 Flask\myapp_01\.venv')
+        VIRTUAL_ENV=$(cygpath 'C:\Users\roman\Cursos\IBM_Python_Avanzado\TemarioCurso\11 Flask\myapp_01\.venv')
         export VIRTUAL_ENV
         ;;
     *)
         # use the path as-is
-        export VIRTUAL_ENV='G:\WORKSPACE\11 Flask\myapp_01\.venv'
+        export VIRTUAL_ENV='C:\Users\roman\Cursos\IBM_Python_Avanzado\TemarioCurso\11 Flask\myapp_01\.venv'
         ;;
 esac
 
@@ -54,7 +54,7 @@ _OLD_VIRTUAL_PATH="$PATH"
 PATH="$VIRTUAL_ENV/"Scripts":$PATH"
 export PATH
 
-VIRTUAL_ENV_PROMPT='(.venv) '
+VIRTUAL_ENV_PROMPT=.venv
 export VIRTUAL_ENV_PROMPT
 
 # unset PYTHONHOME if set
@@ -67,7 +67,7 @@ fi
 
 if [ -z "${VIRTUAL_ENV_DISABLE_PROMPT:-}" ] ; then
     _OLD_VIRTUAL_PS1="${PS1:-}"
-    PS1="("'(.venv) '") ${PS1:-}"
+    PS1="(".venv") ${PS1:-}"
     export PS1
 fi
 
