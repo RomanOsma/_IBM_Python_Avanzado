@@ -135,3 +135,5 @@ htmlcov/
 # Jupyter runtime
 ~$*
 *.mp4
+*.mkv
+
