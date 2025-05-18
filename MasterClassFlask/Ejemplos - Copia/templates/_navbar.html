@@ -1,0 +1,24 @@
+
+<!-- El subrayado inicial _ es solo una convención para indicar que es un parcial. -->
+
+<!-- Los enlaces usan url_for() para que sigan funcionando aunque cambies las rutas más adelante. -->
+
+{#  Este archivo es un “parcial” (fragmento reutilizable).              #}
+{#  El guion bajo inicial (_) es solo una convención para decir         #}
+{#  “no se invoca directamente; se incluye en otras plantillas”.        #}
+
+{# templates/_navbar.html #}
+<nav class="navbar">
+  <div class="nav-inner">      {# nuevo contenedor #}
+    <ul class="nav-list">
+      <li class="nav-item"><a href="{{ url_for('home') }}">Inicio</a></li>
+      <li class="nav-item"><a href="{{ url_for('clientes') }}">Clientes</a></li>
+      <li class="nav-item"><a href="{{ url_for('servicios') }}">Servicios</a></li>
+      <li class="nav-item"><a href="{{ url_for('contacto') }}">Contacto</a></li>
+      <li class="nav-item"><a href="{{ url_for('formulario') }}">formulario</a></li>
+    </ul>
+  </div>
+</nav>
+
+<hr> <!-- Separador visual entre el menú y el contenido principal -->
+

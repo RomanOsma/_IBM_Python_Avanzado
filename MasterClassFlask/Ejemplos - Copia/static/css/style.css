@@ -1,0 +1,165 @@
+/* =========================================================================
+   TIPOGRAFÍA Y VARIABLES
+===========================================================================*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root{
+  --primary: #0d6efd;        /* azul corporativo */
+  --primary-dark: #084298;   /* azul para :hover */
+  --bg: #f0f2f5;             /* fondo general    */
+  --white: #fff;
+  --radius: 12px;
+  --shadow: 0 6px 18px rgba(0,0,0,.1);
+}
+
+*,
+*::before,
+*::after{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: #212529;
+  line-height: 1.6;
+}
+
+/* =========================================================================
+   NAVBAR – fondo 100 %, menú-botón alineado a la derecha
+===========================================================================*/
+.navbar{
+  background: var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+
+/* Contenedor interno que comparte ancho con .container */
+.nav-inner{
+  width: min(92%, 960px);
+  margin-inline: auto;
+  padding: .8rem 1rem;
+
+  display: flex;
+  justify-content: flex-end;   /* empuja la lista a la derecha */
+}
+
+.nav-list{
+  list-style: none;
+  display: flex;
+  gap: .8rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item a{
+  display: inline-block;
+  padding: .45rem 1.1rem;
+  border-radius: 999px;          /* “pill button” */
+  background: var(--white);
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  transition: background .25s, color .25s, box-shadow .25s;
+}
+
+.nav-item a:hover{
+  background: var(--primary-dark);
+  color: var(--white);
+  box-shadow: 0 3px 10px rgba(0,0,0,.2);
+}
+
+/* =========================================================================
+   HERO (Home)
+===========================================================================*/
+.hero{
+  background: url("../img/hero.jpg") center/cover;
+  min-height: 50vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--white);
+  position: relative;
+  isolation: isolate;
+}
+
+.hero::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(13,110,253,.55); /* overlay azul */
+  z-index: -1;
+}
+
+.hero h1{ font-size: clamp(2rem, 6vw, 3rem); margin: 0; }
+.hero p { font-size: 1.2rem; margin-top: .5rem; }
+
+/* =========================================================================
+   CONTENEDOR GENERAL
+===========================================================================*/
+.container{
+  width: min(92%, 960px);
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+/* =========================================================================
+   TARJETAS GENERALES
+===========================================================================*/
+.card{
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-block: 1.5rem;
+}
+
+.card img{
+  width: 100%;
+  border-radius: var(--radius);
+  object-fit: cover;
+  max-height: 260px;
+}
+
+/* =========================================================================
+   GRID DE SERVICIOS (imágenes tamaño uniforme)
+===========================================================================*/
+.service-grid{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+}
+
+.service-grid img{
+  width: 100%;
+  height: 180px;               /* misma altura para todas */
+  object-fit: cover;           /* recorta manteniendo proporción */
+  border-radius: var(--radius);
+}
+
+/* =========================================================================
+   LISTA DE CLIENTES
+===========================================================================*/
+ul.fancy-list{
+  padding-left: 1.2rem;
+}
+
+ul.fancy-list li{
+  margin-bottom: .35rem;
+}
+
+ul.fancy-list li::marker{
+  content: "⭑ ";
+  color: var(--primary-dark);
+}
+
+/* =========================================================================
+   UTILIDADES RÁPIDAS
+===========================================================================*/
+.text-center{ text-align: center; }
+.mt-2      { margin-top:  .5rem; }
+.mb-0      { margin-bottom: 0;   }
+
+  

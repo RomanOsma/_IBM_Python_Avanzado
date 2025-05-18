@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+
+  <!-- HERO --------------------------------------------------------------->
+  <section class="hero">
+    <div>
+      <h1>Bienvenido a mi sitio web</h1>
+      <p class="mt-2">Soluciones digitales para tu negocio</p>
+    </div>
+  </section>
+
+  <!-- TARJETA DE PRESENTACIÓN ------------------------------------------->
+  <section class="card text-center">
+    {% if name %}
+      <h2 class="mb-0">Hola, {{ name | upper }} 👋</h2>
+    {% else %}
+      <h2 class="mb-0">Hola, visitante</h2>
+    {% endif %}
+    <p class="mt-2">La fecha de hoy es: {{ date | today }}</p>
+    <p class="mb-0">La frase repetida es: {{ repeat("Hola mundo ", 3) }}</p>
+  </section>
+
+  <!-- SERVICIOS DESTACADOS --------------------------------------------->
+  <section class="card">
+    <h2>Qué hacemos</h2>
+
+    {#  │││  A partir de aquí usamos la clase “service-grid”                #}
+    {#  └┴┴  Todas las imágenes tendrán width:100% y height:180px           #}
+    <div class="service-grid">
+
+      <div>
+        <img src="{{ url_for('static', filename='img/report.jpg') }}" alt="Reportes">
+        <h3>Análisis</h3>
+        <p>Transformamos datos en decisiones estratégicas.</p>
+      </div>
+
+      <div>
+        <img src="{{ url_for('static', filename='img/tablet.jpg') }}" alt="Desarrollo">
+        <h3>Desarrollo</h3>
+        <p>Apps y sitios web a medida, escalables y seguros.</p>
+      </div>
+
+      <div>
+        <img src="{{ url_for('static', filename='img/overlay-wide.jpg') }}" alt="Innovación">
+        <h3>Innovación</h3>
+        <p>Implementamos tecnología que impulsa tu negocio.</p>
+      </div>
+
+    </div>
+  </section>
+
+{% endblock %}
+

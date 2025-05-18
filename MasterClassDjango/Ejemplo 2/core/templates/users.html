@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Usuarios registrados</h2>
+
+<ul>
+    {% for user in users %}
+        <li>
+            {{ user.name }} ({{ user.login }})
+            [<a href="{% url 'edit_user' user.pk %}">Editar</a>]
+            [<a href="{% url 'delete_user' user.pk %}">Eliminar</a>]
+        </li>
+    {% empty %}
+        <li>No hay usuarios registrados aún.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
