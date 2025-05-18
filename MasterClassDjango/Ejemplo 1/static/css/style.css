@@ -1,0 +1,78 @@
+/* ==== ESTILOS GENERALES ==== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* ==== ENCABEZADO ==== */
+header {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 3rem 1rem;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* ==== NAVEGACIÓN ==== */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.nav-link {
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important; /* Amarillo suave al pasar el ratón */
+}
+
+/* ==== CONTENIDO PRINCIPAL ==== */
+main h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+main p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* ==== FOOTER ==== */
+footer {
+    border-top: 1px solid #ddd;
+    background-color: #f1f1f1;
+    font-size: 0.9rem;
+    padding: 2rem 1rem;
+}
+
+footer a {
+    color: #333;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #007bff;
+}
+
+footer i {
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+footer i:hover {
+    color: #0056b3;
+}
