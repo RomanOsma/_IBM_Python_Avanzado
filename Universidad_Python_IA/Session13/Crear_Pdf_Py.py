@@ -30,7 +30,7 @@ c.setFont("Helvetica", 10)
 y -= 30
 for file in sorted(py_files):
     if y < 40:
-        c.showPage()
+        c.showPage()Crear_Pdf_Py.py
         y = height - 40
         c.setFont("Helvetica", 10)
     c.drawString(50, y, f"- {file}")
