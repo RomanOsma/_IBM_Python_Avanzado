@@ -4,7 +4,7 @@ from mysql.connector import Error
 class Conexion:
     DATABASE = 'zona_fit_db'
     USERNAME = 'root'
-    PASSWORD = 'admin'
+    PASSWORD = 'Aroman1984'
     DB_PORT = '3306'
     HOST = 'localhost'
     POOL_SIZE = 5
@@ -27,6 +27,7 @@ class Conexion:
                 return cls.pool
             except Error as e:
                 print(f'Ocurrio un error al obtener pool: {e}')
+                return None
         else:
             return cls.pool
 

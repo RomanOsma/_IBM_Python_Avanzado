@@ -4,15 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81bf514-6adf-4c57-a37f-da9d748a7072" name="Changes" comment="recolocar todo">
-      <change beforePath="$PROJECT_DIR$/Proyecto/Prueba Técnica - SCL Consulting.docx.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Práctica+final+curso+Flask+-+Django REAL.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/¡Claro que sí! Aquí tienes un esque.txt" beforeDir="false" />
+    <list default="true" id="d81bf514-6adf-4c57-a37f-da9d748a7072" name="Changes" comment="recolocar todo final">
+      <change afterPath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-10-00-HolaMundoBootstrap-UPC.t.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-05-00-IntroCSS-UPC/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-05-00-IntroCSS-UPC/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-07-00-EstilosExternosCSS-UPC/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-07-00-EstilosExternosCSS-UPC/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-18-00-GridBootstrap-UPC/ManejoFlask/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-18-00-GridBootstrap-UPC/ManejoFlask/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-19-00-TablaClientesEstatica-UPC/ManejoFlask/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-19-00-TablaClientesEstatica-UPC/ManejoFlask/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-20-00-TablaDinamica-UPC/ManejoFlask/cliente_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-20-00-TablaDinamica-UPC/ManejoFlask/cliente_dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-20-00-TablaDinamica-UPC/ManejoFlask/conexion.py" beforeDir="false" afterPath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-20-00-TablaDinamica-UPC/ManejoFlask/conexion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-20-00-TablaDinamica-UPC/ManejoFlask/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-20-00-TablaDinamica-UPC/ManejoFlask/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-23-00-Formulario-botones-UPC/ManejoFlask/conexion.py" beforeDir="false" afterPath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-23-00-Formulario-botones-UPC/ManejoFlask/conexion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-28-00-Formulario-Wtforms-UPC/ManejoFlask/conexion.py" beforeDir="false" afterPath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-28-00-Formulario-Wtforms-UPC/ManejoFlask/conexion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-28-00-Formulario-Wtforms-UPC/ManejoFlask/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Universidad_Python_IA/Session13/EjerciciosVideos/13-28-00-Formulario-Wtforms-UPC/ManejoFlask/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,6 +45,9 @@
     &quot;accountId&quot;: &quot;6b812e4f-22a6-4861-8552-ff61daec3832&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
@@ -38,16 +57,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/roman/Cursos/IBM_Python_Avanzado&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.13-13-00-HolaMundoFlask-UPC.executor": "Run",
+    "Python.13-14-00-VariasRutas-UPC.executor": "Run",
+    "Python.Crear_Pdf_Py2.executor": "Run",
+    "Python.Guia_Flask_Completa_Unificada.executor": "Run",
+    "Python.app.executor": "Run",
+    "Python.conexion.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/roman/Cursos/_IBM_Python_Avanzado/Universidad_Python_IA/Session13/EjerciciosVideos",
+    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\roman\Cursos\_IBM_Python_Avanzado\Universidad_Python_IA\Session13\EjerciciosVideos" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\roman\Cursos\_IBM_Python_Avanzado\Universidad_Python_IA\Session13" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -119,7 +153,39 @@
       <option name="project" value="LOCAL" />
       <updated>1746962382437</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="recolocar todo">
+      <option name="closed" value="true" />
+      <created>1747558953949</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747558953949</updated>
+    </task>
+    <task id="LOCAL-00009" summary="recolocar todo">
+      <option name="closed" value="true" />
+      <created>1747559041850</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747559041850</updated>
+    </task>
+    <task id="LOCAL-00010" summary="recolocar todo final">
+      <option name="closed" value="true" />
+      <created>1747559192700</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1747559192700</updated>
+    </task>
+    <task id="LOCAL-00011" summary="recolocar todo final">
+      <option name="closed" value="true" />
+      <created>1747572453243</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1747572453243</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,6 +202,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Confirmacion inicial del proyecto IBM Python Avanzado" />
     <MESSAGE value="recolocar todo" />
-    <option name="LAST_COMMIT_MESSAGE" value="recolocar todo" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'" />
+    <MESSAGE value="recolocar todo final" />
+    <option name="LAST_COMMIT_MESSAGE" value="recolocar todo final" />
   </component>
 </project>
