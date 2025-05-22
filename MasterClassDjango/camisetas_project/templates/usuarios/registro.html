@@ -1,0 +1,95 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Registro de Usuario{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="form-container">
+            <h2 class="form-title text-center">Crear una cuenta</h2>
+            
+            <form method="post" action="{% url 'usuarios:registro' %}">
+                {% csrf_token %}
+                
+                {% if form.errors %}
+                <div class="alert alert-danger">
+                    <p>Por favor, corrige los errores indicados a continuación.</p>
+                </div>
+                {% endif %}
+                
+                <div class="mb-3">
+                    <label for="id_username" class="form-label">Nombre de usuario</label>
+                    <input type="text" name="username" id="id_username" class="form-control {% if form.username.errors %}is-invalid{% endif %}" required>
+                    {% if form.username.errors %}
+                    <div class="invalid-feedback">
+                        {{ form.username.errors }}
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div class="mb-3">
+                    <label for="id_first_name" class="form-label">Nombre</label>
+                    <input type="text" name="first_name" id="id_first_name" class="form-control {% if form.first_name.errors %}is-invalid{% endif %}" required>
+                    {% if form.first_name.errors %}
+                    <div class="invalid-feedback">
+                        {{ form.first_name.errors }}
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div class="mb-3">
+                    <label for="id_last_name" class="form-label">Apellidos</label>
+                    <input type="text" name="last_name" id="id_last_name" class="form-control {% if form.last_name.errors %}is-invalid{% endif %}" required>
+                    {% if form.last_name.errors %}
+                    <div class="invalid-feedback">
+                        {{ form.last_name.errors }}
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div class="mb-3">
+                    <label for="id_email" class="form-label">Email</label>
+                    <input type="email" name="email" id="id_email" class="form-control {% if form.email.errors %}is-invalid{% endif %}" required>
+                    {% if form.email.errors %}
+                    <div class="invalid-feedback">
+                        {{ form.email.errors }}
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div class="mb-3">
+                    <label for="id_password1" class="form-label">Contraseña</label>
+                    <input type="password" name="password1" id="id_password1" class="form-control {% if form.password1.errors %}is-invalid{% endif %}" required>
+                    {% if form.password1.errors %}
+                    <div class="invalid-feedback">
+                        {{ form.password1.errors }}
+                    </div>
+                    {% endif %}
+                    <div class="form-text">
+                        La contraseña debe tener al menos 8 caracteres y no puede ser demasiado común.
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="id_password2" class="form-label">Confirmar contraseña</label>
+                    <input type="password" name="password2" id="id_password2" class="form-control {% if form.password2.errors %}is-invalid{% endif %}" required>
+                    {% if form.password2.errors %}
+                    <div class="invalid-feedback">
+                        {{ form.password2.errors }}
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                </div>
+            </form>
+            
+            <div class="text-center mt-4">
+                <p>¿Ya tienes una cuenta? <a href="{% url 'usuarios:login' %}">Inicia sesión aquí</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

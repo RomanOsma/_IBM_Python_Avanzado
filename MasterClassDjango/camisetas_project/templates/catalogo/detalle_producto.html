@@ -1,0 +1,99 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}{{ producto.nombre }}{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'catalogo:inicio' %}">Inicio</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'catalogo:lista_productos' %}">Productos</a></li>
+        <li class="breadcrumb-item"><a href="{{ producto.categoria.get_absolute_url }}">{{ producto.categoria.nombre }}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ producto.nombre }}</li>
+    </ol>
+</nav>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="product-detail-image">
+            {% if producto.imagen %}
+            <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" class="img-fluid rounded">
+            {% else %}
+            <img src="{% static 'images/camiseta_real_madrid.webp' %}" alt="{{ producto.nombre }}" class="img-fluid rounded">
+            {% endif %}
+            {% if producto.descuento %}
+            <div class="discount-badge">-{{ producto.descuento }}%</div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <h1 class="mb-3">{{ producto.nombre }}</h1>
+        <p class="text-muted">{{ producto.categoria.nombre }}</p>
+        
+        <div class="product-price mb-4">
+            {% if producto.descuento %}
+            <span class="original-price h5">{{ producto.precio }}€</span>
+            <span class="current-price h3">{{ producto.precio_final }}€</span>
+            {% else %}
+            <span class="current-price h3">{{ producto.precio }}€</span>
+            {% endif %}
+        </div>
+        
+        <div class="product-description mb-4">
+            {{ producto.descripcion|linebreaks }}
+        </div>
+        
+        <form action="{% url 'carrito:agregar_al_carrito' producto.id %}" method="post" class="mb-4">
+            {% csrf_token %}
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="cantidad" class="col-form-label">Cantidad:</label>
+                </div>
+                <div class="col-auto">
+                    {{ form_carrito.cantidad }}
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-shopping-cart"></i> Añadir al carrito
+                    </button>
+                </div>
+            </div>
+            {{ form_carrito.actualizar }}
+        </form>
+        
+        <div class="product-meta">
+            <p><strong>Disponibilidad:</strong> {% if producto.stock > 0 %}En stock ({{ producto.stock }} unidades){% else %}Agotado{% endif %}</p>
+            <p><strong>Categoría:</strong> <a href="{{ producto.categoria.get_absolute_url }}">{{ producto.categoria.nombre }}</a></p>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-12">
+        <h3 class="mb-4">Productos relacionados</h3>
+        <div class="row">
+            {% for i in "1234" %}
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="product-card">
+                    <div class="product-image">
+                        <a href="#">
+                            <img src="{% static 'images/camiseta_barcelona.webp' %}" alt="Producto relacionado">
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Camisetas</div>
+                        <h3 class="product-title">
+                            <a href="#">Camiseta FC Barcelona 2024/2025</a>
+                        </h3>
+                        <div class="product-price">
+                            <span class="current-price">79,95€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

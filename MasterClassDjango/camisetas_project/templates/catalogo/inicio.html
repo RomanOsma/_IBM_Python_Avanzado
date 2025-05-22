@@ -1,0 +1,115 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Tienda de Camisetas de Fútbol - Inicio{% endblock %}
+
+{% block content %}
+<div class="hero-banner">
+    <div id="carouselHero" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/camiseta_real_madrid.webp' %}" class="d-block w-100" alt="Real Madrid">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Camiseta Real Madrid 2024/2025</h2>
+                    <p>Viste como los campeones con la nueva equipación oficial</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/camiseta_barcelona.webp' %}" class="d-block w-100" alt="FC Barcelona">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Camiseta FC Barcelona 2024/2025</h2>
+                    <p>La nueva equipación blaugrana ya disponible</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/camiseta_atletico.webp' %}" class="d-block w-100" alt="Atlético de Madrid">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Camiseta Atlético de Madrid 2024/2025</h2>
+                    <p>Siente la pasión rojiblanca con la nueva equipación</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselHero" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselHero" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+</div>
+
+<h2 class="mb-4">Productos destacados</h2>
+<div class="row">
+    {% for producto in productos %}
+    <div class="col-md-3 col-sm-6">
+        <div class="product-card">
+            <div class="product-image">
+                {% if producto.descuento %}
+                <div class="discount-badge">-{{ producto.descuento }}%</div>
+                {% endif %}
+                <a href="{{ producto.get_absolute_url }}">
+                    {% if producto.imagen %}
+                    <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+                    {% else %}
+                    <img src="{% static 'images/camiseta_real_madrid.webp' %}" alt="{{ producto.nombre }}">
+                    {% endif %}
+                </a>
+            </div>
+            <div class="product-info">
+                <div class="product-category">{{ producto.categoria.nombre }}</div>
+                <h3 class="product-title">
+                    <a href="{{ producto.get_absolute_url }}">{{ producto.nombre }}</a>
+                </h3>
+                <div class="product-price">
+                    {% if producto.descuento %}
+                    <span class="original-price">{{ producto.precio }}€</span>
+                    <span class="current-price">{{ producto.precio_final }}€</span>
+                    {% else %}
+                    <span class="current-price">{{ producto.precio }}€</span>
+                    {% endif %}
+                </div>
+                <div class="product-actions">
+                    <form action="{% url 'carrito:agregar_al_carrito' producto.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="cantidad" value="1">
+                        <input type="hidden" name="actualizar" value="False">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-shopping-cart"></i> Añadir
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="alert alert-info">No hay productos disponibles actualmente.</div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-6">
+        <div class="category-banner">
+            <img src="{% static 'images/botas_adidas.webp' %}" alt="Botas de fútbol">
+            <div class="banner-content">
+                <h3 class="banner-title">Botas de Fútbol</h3>
+                <p>Descubre las últimas novedades en botas de fútbol</p>
+                <a href="#" class="btn btn-light">Ver más</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="category-banner">
+            <img src="{% static 'images/chandal_real_madrid.webp' %}" alt="Ropa deportiva">
+            <div class="banner-content">
+                <h3 class="banner-title">Ropa Deportiva</h3>
+                <p>Equipaciones completas para entrenar y jugar</p>
+                <a href="#" class="btn btn-light">Ver más</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

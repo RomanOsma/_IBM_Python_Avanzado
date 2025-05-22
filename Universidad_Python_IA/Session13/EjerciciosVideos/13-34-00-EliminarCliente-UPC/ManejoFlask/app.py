@@ -29,7 +29,7 @@ def guardar():
     cliente_forma = ClienteForma(obj=cliente)
     if cliente_forma.validate_on_submit():
         # Llenamos el objeto cliente con los valores del formulario
-        cliente_forma.populate_obj(cliente)  # tambien se recupera el id oculto del formulario
+        cliente_forma.populate_obj(cliente)  # también se recupera él, id oculto del formulario
         if not cliente.id:
             # Guardamos el nuevo cliente en la bd
             ClienteDAO.insertar(cliente)

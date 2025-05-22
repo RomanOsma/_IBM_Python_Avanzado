@@ -1,0 +1,133 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Finalizar Compra{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Finalizar compra</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="form-container">
+            <h4 class="mb-4">Datos de envío</h4>
+            <form method="post" action="{% url 'carrito:checkout' %}">
+                {% csrf_token %}
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="apellidos" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="direccion" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion" required>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="codigo_postal" class="form-label">Código Postal</label>
+                        <input type="text" class="form-control" id="codigo_postal" name="codigo_postal" required>
+                    </div>
+                    <div class="col-md-8">
+                        <label for="ciudad" class="form-label">Ciudad</label>
+                        <input type="text" class="form-control" id="ciudad" name="ciudad" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Teléfono</label>
+                    <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                </div>
+                
+                <h4 class="mb-4 mt-5">Método de pago</h4>
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="metodo_pago" id="tarjeta" value="tarjeta" checked>
+                        <label class="form-check-label" for="tarjeta">
+                            Tarjeta de crédito/débito
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="metodo_pago" id="paypal" value="paypal">
+                        <label class="form-check-label" for="paypal">
+                            PayPal
+                        </label>
+                    </div>
+                </div>
+                
+                <div id="datos_tarjeta">
+                    <div class="mb-3">
+                        <label for="numero_tarjeta" class="form-label">Número de tarjeta</label>
+                        <input type="text" class="form-control" id="numero_tarjeta" name="numero_tarjeta" placeholder="XXXX XXXX XXXX XXXX">
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="fecha_caducidad" class="form-label">Fecha de caducidad</label>
+                            <input type="text" class="form-control" id="fecha_caducidad" name="fecha_caducidad" placeholder="MM/AA">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="cvv" class="form-label">CVV</label>
+                            <input type="text" class="form-control" id="cvv" name="cvv" placeholder="XXX">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Realizar pedido</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="cart-summary">
+            <h4 class="mb-3">Resumen del pedido</h4>
+            {% for item in carrito %}
+            <div class="d-flex justify-content-between mb-2">
+                <span>{{ item.producto.nombre }} x {{ item.cantidad }}</span>
+                <span>{{ item.precio_total }}€</span>
+            </div>
+            {% endfor %}
+            <hr>
+            <div class="d-flex justify-content-between mb-2">
+                <span>Subtotal:</span>
+                <span>{{ carrito.get_precio_total }}€</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+                <span>Gastos de envío:</span>
+                <span>Gratis</span>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between mb-4">
+                <strong>Total:</strong>
+                <strong>{{ carrito.get_precio_total }}€</strong>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const metodoPago = document.querySelectorAll('input[name="metodo_pago"]');
+        const datosTarjeta = document.getElementById('datos_tarjeta');
+        
+        metodoPago.forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                if (this.value === 'tarjeta') {
+                    datosTarjeta.style.display = 'block';
+                } else {
+                    datosTarjeta.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

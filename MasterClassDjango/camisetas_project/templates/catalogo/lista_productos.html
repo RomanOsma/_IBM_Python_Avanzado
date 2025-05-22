@@ -1,0 +1,98 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Lista de Productos{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-3">
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Categorías</h5>
+            </div>
+            <div class="list-group list-group-flush">
+                <a href="{% url 'catalogo:lista_productos' %}" class="list-group-item list-group-item-action {% if not categoria %}active{% endif %}">
+                    Todos los productos
+                </a>
+                {% for c in categorias %}
+                <a href="{{ c.get_absolute_url }}" class="list-group-item list-group-item-action {% if categoria.id == c.id %}active{% endif %}">
+                    {{ c.nombre }}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-9">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>
+                {% if categoria %}
+                    {{ categoria.nombre }}
+                {% else %}
+                    Todos los productos
+                {% endif %}
+            </h2>
+            <div class="dropdown">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Ordenar por
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+                    <li><a class="dropdown-item" href="#">Precio: menor a mayor</a></li>
+                    <li><a class="dropdown-item" href="#">Precio: mayor a menor</a></li>
+                    <li><a class="dropdown-item" href="#">Nombre: A-Z</a></li>
+                    <li><a class="dropdown-item" href="#">Nombre: Z-A</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="row">
+            {% for producto in productos %}
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="product-card">
+                    <div class="product-image">
+                        {% if producto.descuento %}
+                        <div class="discount-badge">-{{ producto.descuento }}%</div>
+                        {% endif %}
+                        <a href="{{ producto.get_absolute_url }}">
+                            {% if producto.imagen %}
+                            <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+                            {% else %}
+                            <img src="{% static 'images/camiseta_real_madrid.webp' %}" alt="{{ producto.nombre }}">
+                            {% endif %}
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">{{ producto.categoria.nombre }}</div>
+                        <h3 class="product-title">
+                            <a href="{{ producto.get_absolute_url }}">{{ producto.nombre }}</a>
+                        </h3>
+                        <div class="product-price">
+                            {% if producto.descuento %}
+                            <span class="original-price">{{ producto.precio }}€</span>
+                            <span class="current-price">{{ producto.precio_final }}€</span>
+                            {% else %}
+                            <span class="current-price">{{ producto.precio }}€</span>
+                            {% endif %}
+                        </div>
+                        <div class="product-actions">
+                            <form action="{% url 'carrito:agregar_al_carrito' producto.id %}" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="cantidad" value="1">
+                                <input type="hidden" name="actualizar" value="False">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-shopping-cart"></i> Añadir
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12">
+                <div class="alert alert-info">No hay productos disponibles en esta categoría.</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

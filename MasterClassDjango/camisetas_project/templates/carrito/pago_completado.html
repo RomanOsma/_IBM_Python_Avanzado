@@ -1,0 +1,27 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Pago Completado{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="mb-4">
+                <i class="fas fa-check-circle text-success" style="font-size: 5rem;"></i>
+            </div>
+            <h1 class="mb-4">¡Gracias por tu compra!</h1>
+            <p class="lead mb-4">Tu pedido ha sido procesado correctamente.</p>
+            <p class="mb-5">Hemos enviado un correo electrónico con los detalles de tu pedido. Recibirás otro correo cuando tu pedido sea enviado.</p>
+            
+            <div class="alert alert-info mb-4">
+                <p class="mb-0"><strong>Nota:</strong> Esta es una simulación de compra para fines educativos. No se ha realizado ningún cargo real.</p>
+            </div>
+            
+            <a href="{% url 'catalogo:inicio' %}" class="btn btn-primary btn-lg">
+                Volver a la tienda
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

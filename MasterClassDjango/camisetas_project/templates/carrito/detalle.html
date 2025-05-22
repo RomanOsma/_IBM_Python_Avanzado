@@ -1,0 +1,89 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Carrito de Compra{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Tu carrito de compra</h1>
+
+{% if carrito|length > 0 %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio unitario</th>
+                        <th>Precio total</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in carrito %}
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="{% if item.producto.imagen %}{{ item.producto.imagen.url }}{% else %}{% static 'images/camiseta_real_madrid.webp' %}{% endif %}" alt="{{ item.producto.nombre }}" class="cart-item-image me-3">
+                                <div>
+                                    <h5 class="mb-0">{{ item.producto.nombre }}</h5>
+                                    <small class="text-muted">{{ item.producto.categoria.nombre }}</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <form action="{% url 'carrito:agregar_al_carrito' item.producto.id %}" method="post" class="d-flex align-items-center">
+                                {% csrf_token %}
+                                <input type="number" name="cantidad" value="{{ item.cantidad }}" min="1" max="{{ item.producto.stock }}" class="form-control form-control-sm" style="width: 60px;">
+                                <input type="hidden" name="actualizar" value="True">
+                                <button type="submit" class="btn btn-sm btn-outline-secondary ms-2">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </form>
+                        </td>
+                        <td>{{ item.precio }}€</td>
+                        <td>{{ item.precio_total }}€</td>
+                        <td>
+                            <a href="{% url 'carrito:eliminar_del_carrito' item.producto.id %}" class="btn btn-sm btn-danger">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="cart-summary">
+            <h4 class="mb-3">Resumen del pedido</h4>
+            <div class="d-flex justify-content-between mb-2">
+                <span>Subtotal:</span>
+                <span>{{ carrito.get_precio_total }}€</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+                <span>Gastos de envío:</span>
+                <span>Gratis</span>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between mb-4">
+                <strong>Total:</strong>
+                <strong>{{ carrito.get_precio_total }}€</strong>
+            </div>
+            <a href="{% url 'carrito:checkout' %}" class="btn btn-primary w-100">
+                Finalizar compra
+            </a>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="alert alert-info">
+    <p>Tu carrito está vacío.</p>
+    <a href="{% url 'catalogo:lista_productos' %}" class="btn btn-primary mt-3">
+        Continuar comprando
+    </a>
+</div>
+{% endif %}
+{% endblock %}

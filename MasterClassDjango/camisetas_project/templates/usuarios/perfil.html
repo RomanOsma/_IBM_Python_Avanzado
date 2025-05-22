@@ -1,0 +1,49 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Mi Perfil{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="form-container">
+            <h2 class="form-title">Mi Perfil</h2>
+            
+            <div class="alert alert-info mb-4">
+                <p class="mb-0">Bienvenido, {{ request.user.get_full_name|default:request.user.username }}. Aquí puedes actualizar tus datos de envío.</p>
+            </div>
+            
+            <form method="post" action="{% url 'usuarios:perfil' %}">
+                {% csrf_token %}
+                
+                <div class="mb-3">
+                    <label for="id_direccion" class="form-label">Dirección</label>
+                    <input type="text" name="direccion" id="id_direccion" class="form-control" value="{{ form.direccion.value|default:'' }}">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="id_codigo_postal" class="form-label">Código Postal</label>
+                    <input type="text" name="codigo_postal" id="id_codigo_postal" class="form-control" value="{{ form.codigo_postal.value|default:'' }}">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="id_ciudad" class="form-label">Ciudad</label>
+                    <input type="text" name="ciudad" id="id_ciudad" class="form-control" value="{{ form.ciudad.value|default:'' }}">
+                </div>
+                
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="form-container mt-4">
+            <h3>Mis pedidos</h3>
+            
+            <div class="alert alert-info">
+                <p class="mb-0">No tienes pedidos realizados todavía.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
